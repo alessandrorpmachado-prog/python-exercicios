@@ -1,0 +1,34 @@
+#criar uma matriz e mostrar os seguintes dados: A) A soma de todos os valores pares digitados.B) A soma dos valores da terceira coluna.C) O maior valor da segunda linha.
+
+
+matriz = [[0,0,0,], [0,0,0,], [0,0,0,],]
+somapares = 0
+
+#essa parte é para alimentacao dos valores
+for l in range(0, 3): #faz a varredura nas linhas
+    for c in range(0, 3): #faz a varredura nas colunas
+        matriz[l][c] = int(input(f'Insira dados para [{l, c}]: ')) #adiciona o valor nas coordenadas l e c
+
+        if matriz[l][c] % 2 == 0: #somar os valores pares
+            somapares += matriz[l][c]
+
+for l in range(0, 3): #semelhante à parte de alimentacao dos valores, mas aqui os valores sao impressos
+    for c in range(0, 3):
+        print(f'[{matriz[l][c]}]', end='')
+    print() #quebra o end= e faz com que a matriz tenha o formato 3x3
+maiorlinha2 = matriz[1][c]
+maiorlinha2 = matriz[1][c] #maior valor da linha 2
+for c in range(0, 3):
+    if matriz[1][c] > maiorlinha2:
+        maiorlinha2 = matriz[1][c]
+
+somaterceira = 0 #soma os valores da terceira linha
+for l in range(0, 3):
+    somaterceira += matriz[l][2]
+
+
+
+
+print(f'A soma de todos os valores pares digitados é de {somapares}.')
+print(f'O maior numero da segunda linha é {maiorlinha2}.')
+print(f'a soma dos valores da terceira coluna é de {somaterceira}.')
